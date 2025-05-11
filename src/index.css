@@ -1,0 +1,168 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Minecraft';
+  src: url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/font/minecraft.woff2') format('woff2'),
+       url('https://cdn.jsdelivr.net/gh/South-Paw/typeface-minecraft@master/font/minecraft.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 0 72.2% 50.6%;
+  --primary-foreground: 0 85.7% 97.3%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 72.2% 50.6%;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 0 0% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 72.2% 50.6%;
+  --primary-foreground: 0 85.7% 97.3%;
+  --secondary: 0 0% 14.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 14.9%;
+  --muted-foreground: 0 0% 63.9%;
+  --accent: 0 0% 14.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 14.9%;
+  --input: 0 0% 14.9%;
+  --ring: 0 72.2% 50.6%;
+}
+
+* {
+  @apply border-border;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+  margin: 0;
+  padding: 0;
+  background-color: #1a0000;
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23300000' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M0 20L20 0v20H0zm40 0V0L20 20h20zm0 20L20 20v20h20zM0 20v20l20-20H0z'/%3E%3C/g%3E%3C/svg%3E");
+  overflow-x: hidden;
+}
+
+.minecraft-btn {
+  background-color: #999999;
+  color: #FFFFFF;
+  border: 2px solid #000000;
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+  text-shadow: 2px 2px #000A;
+  font-family: 'Minecraft', sans-serif;
+  image-rendering: pixelated;
+  cursor: pointer;
+  position: relative;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: all 0.1s ease-in-out;
+}
+
+.minecraft-btn:hover {
+  background-color: #BCBCBC;
+}
+
+.minecraft-btn:active {
+  box-shadow: inset -2px -4px #0006;
+}
+
+.minecraft-btn.red {
+  background-color: #AA0000;
+}
+
+.minecraft-btn.red:hover {
+  background-color: #CC0000;
+}
+
+.minecraft-font {
+  font-family: 'Minecraft', sans-serif;
+  image-rendering: pixelated;
+}
+
+.pixel-corners {
+  clip-path: polygon(
+    0px 4px,
+    4px 0px,
+    calc(100% - 4px) 0px,
+    100% 4px,
+    100% calc(100% - 4px),
+    calc(100% - 4px) 100%,
+    4px 100%,
+    0px calc(100% - 4px)
+  );
+}
+
+.minecraft-box {
+  border: 2px solid #000000;
+  background-color: rgba(50, 50, 50, 0.8);
+  box-shadow: inset -2px -4px #0006, inset 2px 2px #FFF7;
+  padding: 1rem;
+}
+
+.floating {
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.server-ip {
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid #FF0000;
+  padding: 0.5rem 1rem;
+  font-family: 'Minecraft', sans-serif;
+  color: white;
+  text-shadow: 2px 2px #000;
+  letter-spacing: 1px;
+}
+
+.server-ip:hover {
+  background-color: rgba(50, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
+}
+
+.nether-bg {
+  background-color: #3c0000;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23ff0000' fill-opacity='0.1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.text-shadow-red {
+  text-shadow: 2px 2px #AA0000;
+}
